@@ -1,0 +1,28 @@
+.flash {
+  padding: var(--space-xs) var(--space-m);
+  margin: var(--space-xs) var(--space-m);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-m);
+  font-weight: bold;
+  text-align: center;
+
+  &--notice {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+  }
+
+  &--alert {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  &--error {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  &--success {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+  }
+}
