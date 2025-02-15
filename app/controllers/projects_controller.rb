@@ -27,6 +27,7 @@ class ProjectsController < ApplicationController
 
   def update
     if @project.update(project_params)
+      ::ProjectUpdates::Tracker.track_changes(@project, current_user)
       redirect_to @project, notice: 'Project was successfully updated.'
     else
       render :edit, status: :unprocessable_entity
