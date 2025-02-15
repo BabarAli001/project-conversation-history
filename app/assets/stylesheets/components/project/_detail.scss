@@ -1,0 +1,26 @@
+.project-detail {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: var(--space-m);
+
+  &__header {
+    margin-bottom: var(--space-l);
+  }
+
+  &__title {
+    font-size: var(--font-size-xxxl);
+    font-weight: bold;
+    margin-bottom: var(--space-xs);
+  }
+
+  &__description {
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-m);
+  }
+
+  &__status {
+    display: flex;
+    align-items: center;
+    gap: var(--space-m);
+  }
+}

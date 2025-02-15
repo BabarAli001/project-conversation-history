@@ -1,0 +1,23 @@
+.project-list {
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--space-m);
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-l);
+  }
+
+  &__title {
+    font-size: var(--font-size-xxxl);
+    font-weight: bold;
+    color: var(--color-text-header);
+  }
+
+  &__grid {
+    display: grid;
+    gap: var(--space-m);
+  }
+}

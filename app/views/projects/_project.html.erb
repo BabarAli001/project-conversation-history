@@ -1,0 +1,23 @@
+<div class="project-card">
+  <div class="project-card__header">
+    <div>
+      <h2 class="project-card__title">
+        <%= link_to project.title, project_path(project) %>
+      </h2>
+      <p class="project-card__description">
+        <%= truncate(project.description, length: 150) %>
+      </p>
+      <span class="project-status">
+        <%= project.status %>
+      </span>
+    </div>
+    <div class="project-card__actions">
+      <%= link_to "Edit", edit_project_path(project),
+          class: "button button--secondary" %>
+      <%= button_to "Delete", project_path(project),
+          method: :delete,
+          class: "button button--secondary",
+          form: { data: { turbo_confirm: "Are you sure?" } } %>
+    </div>
+  </div>
+</div>

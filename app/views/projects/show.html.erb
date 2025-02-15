@@ -1,0 +1,13 @@
+<div class="project-detail">
+  <div class="project-detail__header">
+    <h1 class="project-detail__title"><%= @project.title %></h1>
+    <p class="project-detail__description"><%= @project.description %></p>
+
+    <div class="project-detail__status">
+      <span class="font-semibold">Status:</span>
+      <%= form_with(model: @project, class: "flex items-center gap-2") do |f| %>
+        <%= f.select :status, Project.statuses.keys, { selected: @project.status }, class: "form__input", onchange: "this.form.submit()" %>
+      <% end %>
+    </div>
+  </div>
+</div>

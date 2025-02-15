@@ -3,8 +3,13 @@
     <%= link_to 'Home', root_path, class: 'navbar__brand' %>
 
     <nav class="navbar__links">
-      <%= link_to 'About', '#', class: 'navbar__link' %>
-      <%= link_to 'Contact', '#', class: 'navbar__link' %>
+      <% if current_user %>
+        <%= link_to 'Projects', projects_path, class: 'navbar__link' %>
+        <%= button_to 'Logout', logout_path, method: :delete, class: 'navbar__link' %>
+      <% else %>
+        <%= link_to 'Login', login_path, class: 'navbar__link' %>
+        <%= link_to 'Sign Up', signup_path, class: 'navbar__link' %>
+      <% end %>
     </nav>
   </div>
 </header>
