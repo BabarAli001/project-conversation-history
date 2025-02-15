@@ -1,24 +1,61 @@
-# README
+# Project Conversation History
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Getting Started
 
-Things you may want to cover:
+### Developed With
+- Ruby Version - 3.16
+- PostgreSQL ( 13 or higher)
+- Rails 7.2.2.1
+- SCSS
 
-* Ruby version
+### Setup
+1. Clone the repository
+   ```bash
+   git clone [repository-url]
+   cd [repository-name]
+   ```
 
-* System dependencies
+2. Install dependencies
+   ```bash
+   bundle install
+   ```
 
-* Configuration
+3. Database setup
+   ```bash
+   rails db:create
+   rails db:migrate
+   ```
 
-* Database creation
+5. Start the application
+   ```bash
+   bin/dev
+   ```
+   This will start both the Rails server and any other processes defined in your Procfile.
 
-* Database initialization
+The application should now be running at `http://localhost:3000`
 
-* How to run the test suite
+## Project Definition / Questions
+- **What defines a "project"?**
+  A project should have a title, description, and creation date.
 
-* Services (job queues, cache servers, search engines, etc.)
+## Status Management
+- **What are the possible status values for a project?**
+  Projects can be:
+  - Backlog
+  - In Progress
+  - On Hold
+  - Completed
 
-* Deployment instructions
+## User Management
+- **Do we need user authentication? Should comments be associated with users?**
+  - Yes, we need basic user authentication.
+  - Comments and status changes should track who made them.
 
-* ...
+## UI/UX Requirements
+- **How should the conversation history be displayed?**
+  - Display in reverse chronological order (newest first).
+  - Show both comments and status changes in a single timeline.
+
+## Comment Features
+- **Do comments need any special formatting (Markdown, etc.)?**
+  - Keep it simple for now—plain text comments are
