@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   def index
-    @projects = current_user.projects.order(created_at: :desc)
+    @projects = Project.all.order(created_at: :desc)
   end
 
   def show
@@ -35,14 +35,18 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    @project.destroy
-    redirect_to projects_url, notice: 'Project was successfully deleted.'
+    if @project.creater?(current_user)
+      @project.destroy
+      redirect_to projects_url, notice: 'Project was successfully deleted.'
+    else
+      redirect_to projects_url, alert: 'You are not authorized to delete this project.'
+    end
   end
 
   private
 
   def set_project
-    @project = current_user.projects.find(params[:id])
+    @project = Project.find(params[:id])
   end
 
   def project_params

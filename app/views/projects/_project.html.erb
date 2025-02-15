@@ -11,13 +11,15 @@
         <%= project.status %>
       </span>
     </div>
-    <div class="project-card__actions">
-      <%= link_to "Edit", edit_project_path(project),
-          class: "button button--secondary" %>
+    <% if project.creater?(current_user) %>
+      <div class="project-card__actions">
+        <%= link_to "Edit", edit_project_path(project),
+            class: "button button--secondary" %>
       <%= button_to "Delete", project_path(project),
           method: :delete,
           class: "button button--secondary",
           form: { data: { turbo_confirm: "Are you sure?" } } %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>

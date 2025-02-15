@@ -10,4 +10,8 @@ class Project < ApplicationRecord
   def conversation_items
     (comments + project_histories).sort_by(&:created_at).reverse
   end
+
+  def creater?(user)
+    user.id == user_id
+  end
 end
