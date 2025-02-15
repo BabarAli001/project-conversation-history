@@ -1,0 +1,23 @@
+<div class="comment">
+  <div class="comment__header">
+    <div class="comment__meta">
+      <strong><%= comment.user.email %></strong> commented
+      <%= time_ago_in_words(comment.created_at) %> ago
+    </div>
+
+    <% if comment.user == current_user %>
+      <div class="comment__actions">
+        <%= button_to project_comment_path(@project, comment),
+            method: :delete,
+            class: "button button--secondary",
+            form: { data: { turbo_confirm: "Are you sure?" } } do %>
+          Delete
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="comment__content">
+    <%= simple_format(comment.content) %>
+  </div>
+</div>

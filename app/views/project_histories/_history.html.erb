@@ -1,0 +1,10 @@
+<div class="comment history">
+  <div class="comment__header">
+    <div class="comment__meta">
+      <strong><%= history.user.email %></strong> changed status from
+      <strong><%= history.modifications["status"]["from"] %></strong> to
+      <strong><%= history.modifications["status"]["to"] %></strong>
+      <%= time_ago_in_words(history.created_at) %> ago
+    </div>
+  </div>
+</div>

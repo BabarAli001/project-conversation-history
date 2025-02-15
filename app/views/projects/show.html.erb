@@ -10,4 +10,28 @@
       <% end %>
     </div>
   </div>
+
+  <div class="project-comments">
+    <h2 class="project-comments__header">Conversation History</h2>
+
+    <div class="project-comments__form">
+      <%= form_with(model: [@project, Comment.new], class: "form__container") do |f| %>
+        <div class="form__field">
+          <%= f.text_area :content, rows: 3, class: "form__input", placeholder: "Add a comment..." %>
+        </div>
+
+        <%= f.submit "Post Comment", class: "button" %>
+      <% end %>
+    </div>
+
+    <div class="project-comments__list">
+      <% @project.conversation_items.each do |item| %>
+        <% if item.is_a?(Comment) %>
+          <%= render "comments/comment", comment: item %>
+        <% else %>
+          <%= render "project_histories/history", history: item %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
