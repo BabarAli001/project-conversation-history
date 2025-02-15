@@ -1,0 +1,63 @@
+.form {
+  max-width: 40rem;
+  margin: var(--space-l) auto;
+  padding: 0 var(--space-m);
+
+  h1 {
+    margin-bottom: var(--space-l);
+    text-align: center;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xxs);
+  }
+
+  &__label {
+    color: var(--color-text-header);
+    font-weight: bold;
+  }
+
+  &__input {
+    padding: var(--space-xs);
+    border: var(--border);
+    border-radius: var(--border-radius);
+    outline-color: var(--color-primary);
+
+    &:focus {
+      border-color: var(--color-primary);
+    }
+  }
+
+  &__button {
+    margin-top: var(--space-xs);
+  }
+
+  &__links {
+    margin-top: var(--space-m);
+    text-align: center;
+    color: var(--color-text-muted);
+
+    a {
+      color: var(--color-primary);
+      text-decoration: none;
+
+      &:hover {
+        color: var(--color-primary-rotate);
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Style for error lists inside flash messages
+.flash ul {
+  list-style-position: inside;
+}

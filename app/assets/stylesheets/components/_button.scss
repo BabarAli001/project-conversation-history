@@ -1,0 +1,21 @@
+.button {
+  padding: var(--space-xs) var(--space-m);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+
+  &:hover {
+    background-color: var(--color-primary-rotate);
+  }
+
+  &--full {
+    display: block;
+    width: 100%;
+  }
+}
